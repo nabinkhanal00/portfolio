@@ -16,14 +16,14 @@ export default function ContactFormPage() {
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="icon-label rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+            className="btn btn-primary"
           >
             <MaterialIcon name="contact_page" className="text-base" />
             Go to Contact Page
           </Link>
           <a
             href={`mailto:${profile.email}`}
-            className="icon-label rounded-full border border-[var(--line)] px-6 py-2.5 text-sm font-semibold text-[var(--text)]"
+            className="btn btn-secondary"
           >
             <MaterialIcon name="mail" className="text-base" />
             Email Directly

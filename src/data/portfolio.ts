@@ -4,7 +4,6 @@ export const profile = {
   summary:
     "Dedicated, goal-oriented engineer with a strong backend and systems focus. I work across support engineering and product development to deliver stable services, faster debugging, and practical automation.",
   location: "Lalitpur, Nepal",
-  phone: "+977 9863474335",
   email: "nabinkhanal688@gmail.com",
   website: "https://nabinkhanal00.com.np",
   github: "https://github.com/nabinkhanal00",
@@ -61,7 +60,7 @@ export const experience = [
   {
     period: "September 2025 - Present",
     role: "Solutions Engineer",
-    organization: "Logpoint",
+    organization: "guardsix (formerly Logpoint)",
     highlights: [
       "Performed root cause analysis on complex technical issues and resolved underlying failures.",
       "Managed escalated customer cases with practical workarounds and minimal service interruption.",
@@ -71,7 +70,7 @@ export const experience = [
   {
     period: "May 2024 - September 2025",
     role: "Associate Solutions Engineer",
-    organization: "Logpoint",
+    organization: "guardsix (formerly Logpoint)",
     highlights: [
       "Resolved customer issues across disk management, networking, database operations, and web servers.",
       "Identified and fixed software defects that improved service stability and runtime performance.",
@@ -119,16 +118,16 @@ export const campusWork = [
 
 export const education = [
   {
-    period: "2017 - 2019",
-    degree: "+2 Science",
-    institution: "Nepal Mega College, Babarmahal, Kathmandu",
-    notes: "GPA 3.85, All Nepal second rank.",
-  },
-  {
     period: "November 2019 - April 2024",
     degree: "Bachelor in Computer Engineering",
     institution: "Pulchowk Campus, Lalitpur",
     notes: "IOE entrance rank 9 out of 12000 aspirants.",
+  },
+  {
+    period: "2017 - 2019",
+    degree: "+2 Science",
+    institution: "Nepal Mega College, Babarmahal, Kathmandu",
+    notes: "GPA 3.85, All Nepal second rank.",
   },
 ];
 

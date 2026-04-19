@@ -16,7 +16,7 @@ export function ContactPanel() {
         <div className="flex flex-wrap gap-3">
           <a
             href={`mailto:${profile.email}?subject=Hello%20Nabin`}
-            className="icon-label rounded-full bg-[var(--accent)] px-5 py-2 text-sm font-semibold text-white transition hover:brightness-110"
+            className="btn btn-primary"
           >
             <MaterialIcon name="mail" className="text-base" />
             Email Me
@@ -25,7 +25,7 @@ export function ContactPanel() {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="icon-label rounded-full border border-[var(--line)] px-5 py-2 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--accent)]"
+            className="btn btn-secondary"
           >
             <MaterialIcon name="group" className="text-base" />
             Connect on LinkedIn
@@ -40,10 +40,6 @@ export function ContactPanel() {
         <p className="icon-label text-lg text-[var(--text)]">
           <MaterialIcon name="mail" className="text-base" />
           {profile.email}
-        </p>
-        <p className="icon-label text-base text-[var(--muted)]">
-          <MaterialIcon name="call" className="text-base" />
-          {profile.phone}
         </p>
         <p className="icon-label text-base text-[var(--muted)]">
           <MaterialIcon name="location_on" className="text-base" />

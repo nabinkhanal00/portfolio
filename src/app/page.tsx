@@ -14,7 +14,7 @@ export default function Home() {
             <MaterialIcon name="engineering" className="text-sm" />
             {profile.role}
           </p>
-          <h1 className="animate-rise-delay mt-4 max-w-3xl font-display text-4xl leading-tight text-[var(--text)] sm:text-5xl md:mt-5 md:text-7xl">
+          <h1 className="animate-rise-delay mt-4 max-w-3xl font-display text-3xl leading-[1.1] text-[var(--text)] sm:text-4xl md:mt-5 md:text-5xl lg:text-6xl">
             Building resilient backend systems and practical engineering workflows.
           </h1>
           <p className="animate-rise-delay mt-6 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:text-lg md:mt-7">
@@ -23,14 +23,14 @@ export default function Home() {
           <div className="animate-rise-delay mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
             <Link
               href="/projects"
-              className="icon-label w-full justify-center rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110 sm:w-auto"
+              className="btn btn-primary w-full sm:w-auto"
             >
               <MaterialIcon name="deployed_code" className="text-base" />
               View Projects
             </Link>
             <Link
               href="/contact"
-              className="icon-label w-full justify-center rounded-full border border-[var(--line)] px-6 py-2.5 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--accent)] sm:w-auto"
+              className="btn btn-secondary w-full sm:w-auto"
             >
               <MaterialIcon name="mail" className="text-base" />
               Contact Me
