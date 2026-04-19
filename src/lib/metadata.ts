@@ -25,6 +25,10 @@ export const rootMetadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [{ url: "/favicon-nk.svg", type: "image/svg+xml" }],
+    shortcut: ["/favicon-nk.svg"],
+  },
   openGraph: {
     title: siteMetadata.defaultTitle,
     description: siteMetadata.defaultDescription,
