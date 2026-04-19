@@ -12,7 +12,7 @@ export function PageShell({ title, description, children }: PageShellProps) {
     <main
       id="main-content"
       tabIndex={-1}
-      className="mx-auto w-full max-w-6xl scroll-mt-28 px-4 pb-20 pt-24 focus:outline-none sm:px-5 md:px-8 md:pt-32"
+      className="page-main"
     >
       <section className="mb-14 max-w-3xl animate-rise-in">
         <p className="icon-label mb-2 text-xs tracking-[0.24em] text-[var(--muted)] uppercase">

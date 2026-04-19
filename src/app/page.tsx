@@ -14,9 +14,9 @@ export default function Home() {
     <main
       id="main-content"
       tabIndex={-1}
-      className="mx-auto w-full max-w-6xl scroll-mt-28 px-4 pb-20 pt-24 focus:outline-none sm:px-5 md:px-8 md:pt-32"
+      className="page-main"
     >
-      <section className="grid items-center gap-10 border-b border-[var(--line)] pb-14 md:min-h-[calc(100svh-9rem)] md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:pb-24">
+      <section className="page-hero grid items-center gap-10 border-b border-[var(--line)] pb-14 md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:pb-24">
         <div>
           <p className="icon-label animate-rise-in font-mono text-xs tracking-[0.24em] text-[var(--muted)] uppercase">
             <MaterialIcon name="engineering" className="text-sm" />
@@ -95,7 +95,7 @@ export default function Home() {
       </section>
 
       <section className="grid gap-10 border-b border-[var(--line)] py-16 md:grid-cols-[0.8fr_1.2fr]">
-        <h2 className="icon-label font-display text-3xl text-[var(--text)] md:sticky md:top-28 md:self-start">
+        <h2 className="sticky-section-title icon-label font-display text-3xl text-[var(--text)]">
           <MaterialIcon name="work_history" className="text-3xl" />
           Experience Snapshot
         </h2>
@@ -125,7 +125,7 @@ export default function Home() {
       </section>
 
       <section className="grid gap-10 border-b border-[var(--line)] py-16 md:grid-cols-[0.8fr_1.2fr]">
-        <h2 className="icon-label font-display text-3xl text-[var(--text)] md:sticky md:top-28 md:self-start">
+        <h2 className="sticky-section-title icon-label font-display text-3xl text-[var(--text)]">
           <MaterialIcon name="deployed_code" className="text-3xl" />
           Featured Projects
         </h2>
@@ -154,7 +154,7 @@ export default function Home() {
       </section>
 
       <section className="grid gap-10 py-16 md:grid-cols-[0.8fr_1.2fr]">
-        <h2 className="icon-label font-display text-3xl text-[var(--text)] md:sticky md:top-28 md:self-start">
+        <h2 className="sticky-section-title icon-label font-display text-3xl text-[var(--text)]">
           <MaterialIcon name="school" className="text-3xl" />
           Education
         </h2>

@@ -29,7 +29,7 @@ export function SiteNav() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--line)] bg-[color:var(--surface)]/90 backdrop-blur-xl">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 md:px-8 md:py-4">
+      <div className="site-header mx-auto flex w-full max-w-6xl items-center justify-between px-4 md:px-8">
         <Link
           href="/"
           className="text-xs font-semibold tracking-[0.16em] text-[var(--text)] uppercase sm:text-sm"

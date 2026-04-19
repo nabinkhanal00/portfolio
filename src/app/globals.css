@@ -2,6 +2,9 @@
 @import "tailwindcss";
 
 :root {
+  --nav-height: 4.5rem;
+  --page-top-space: 1.5rem;
+  --page-bottom-space: 5rem;
   --bg: #f4f8f4;
   --surface: #fdfefd;
   --surface-strong: #ffffff;
@@ -33,6 +36,13 @@ html.dark {
   --ambient-1: color-mix(in oklab, var(--accent) 45%, #0d1511);
   --ambient-2: #4c3f2a;
   color-scheme: dark;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-height: 5rem;
+    --page-top-space: 2rem;
+  }
 }
 
 @theme inline {
@@ -150,6 +160,34 @@ a {
   background: color-mix(in oklab, var(--accent-soft) 60%, var(--surface) 40%);
 }
 
+.site-header {
+  min-height: var(--nav-height);
+}
+
+.page-main {
+  width: 100%;
+  max-width: 72rem;
+  min-height: 100svh;
+  margin-inline: auto;
+  padding-top: calc(var(--nav-height) + var(--page-top-space));
+  padding-right: 1rem;
+  padding-bottom: var(--page-bottom-space);
+  padding-left: 1rem;
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
+.page-main:focus {
+  outline: none;
+}
+
+.page-hero {
+  min-height: calc(100svh - var(--nav-height) - var(--page-top-space));
+}
+
+.sticky-section-title {
+  position: static;
+}
+
 .ambient {
   pointer-events: none;
   position: fixed;
@@ -159,7 +197,7 @@ a {
 }
 
 .ambient-one {
-  top: 85px;
+  top: calc(var(--nav-height) + 0.5rem);
   right: 6vw;
   width: 280px;
   height: 280px;
@@ -216,6 +254,26 @@ a {
     width: 190px;
     height: 190px;
     filter: blur(42px);
+  }
+}
+
+@media (min-width: 640px) {
+  .page-main {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-main {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  .sticky-section-title {
+    position: sticky;
+    top: calc(var(--nav-height) + 1.5rem);
+    align-self: flex-start;
   }
 }
 
