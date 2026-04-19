@@ -80,10 +80,9 @@ function subscribe(onStoreChange: () => void) {
 
 type ThemeToggleProps = {
   className?: string;
-  compact?: boolean;
 };
 
-export function ThemeToggle({ className, compact = false }: ThemeToggleProps) {
+export function ThemeToggle({ className }: ThemeToggleProps) {
   const theme = useSyncExternalStore(subscribe, readThemeSnapshot, () => "light");
 
   const toggleTheme = () => {
@@ -105,8 +104,7 @@ export function ThemeToggle({ className, compact = false }: ThemeToggleProps) {
       className={className}
     >
       <MaterialIcon name={icon} className="text-base" />
-      {!compact && <span>{label}</span>}
-      {compact && <span className="sr-only">{label}</span>}
+      <span className="sr-only">{label}</span>
     </button>
   );
 }

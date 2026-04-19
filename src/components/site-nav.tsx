@@ -36,14 +36,11 @@ export function SiteNav() {
               </Link>
             ))}
           </nav>
-          <ThemeToggle className="icon-label rounded-full border border-[var(--line)] px-3 py-1.5 text-sm text-[var(--text)] transition hover:border-[var(--accent)]" />
+          <ThemeToggle className="rounded-full border border-[var(--line)] p-2 text-[var(--text)] transition hover:border-[var(--accent)]" />
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle
-            compact
-            className="rounded-full border border-[var(--line)] p-2 text-[var(--text)] transition hover:border-[var(--accent)]"
-          />
+          <ThemeToggle className="rounded-full border border-[var(--line)] p-2 text-[var(--text)] transition hover:border-[var(--accent)]" />
           <button
             type="button"
             onClick={() => setMobileOpen((value) => !value)}
