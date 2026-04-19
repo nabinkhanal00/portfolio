@@ -41,10 +41,11 @@ export default function Home() {
         <aside className="space-y-6 border border-[var(--line)] bg-[var(--surface-strong)] p-6 md:space-y-7 md:p-8">
           <div className="rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-2">
             <Image
-              src="/images/nabin-professional-headshot.png"
+              src="/images/nabin-professional-headshot.jpg"
               alt="Professional portrait of Nabin Khanal"
-              width={1024}
-              height={1024}
+              width={921}
+              height={1152}
+              sizes="(min-width: 1024px) 420px, (min-width: 768px) 38vw, 100vw"
               priority
               className="h-auto w-full rounded-xl object-cover"
             />
@@ -66,7 +67,7 @@ export default function Home() {
             </p>
             <p className="icon-label mt-2 text-xl text-[var(--text)]">
               <MaterialIcon name="work" className="text-base" />
-              Solutions Engineer, Logpoint
+              Solutions Engineer, guardsix (formerly Logpoint)
             </p>
           </div>
           <div>
