@@ -3,7 +3,7 @@ import Script from "next/script";
 import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
-import { profile } from "@/data/portfolio";
+import { personStructuredData, rootMetadata } from "@/lib/metadata";
 import "./globals.css";
 
 const themeInitScript = `
@@ -29,23 +29,9 @@ const mono = IBM_Plex_Mono({
   weight: ["400", "500"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(profile.website),
-  title: {
-    default: "Nabin Khanal | Computer Engineer",
-    template: "%s | Nabin Khanal",
-  },
-  description:
-    "Portfolio of Nabin Khanal, Computer Engineer focused on backend development, systems engineering, and DevOps.",
-  openGraph: {
-    title: "Nabin Khanal | Computer Engineer",
-    description:
-      "Backend, systems, and support engineering portfolio with projects, skills, and experience.",
-    url: profile.website,
-    siteName: "Nabin Khanal Portfolio",
-    type: "website",
-  },
-};
+const personStructuredDataJson = JSON.stringify(personStructuredData);
+
+export const metadata: Metadata = rootMetadata;
 
 export default function RootLayout({
   children,
@@ -58,8 +44,14 @@ export default function RootLayout({
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
         </Script>
+        <Script id="person-structured-data" type="application/ld+json" strategy="beforeInteractive">
+          {personStructuredDataJson}
+        </Script>
       </head>
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <div className="ambient ambient-one" aria-hidden />
         <div className="ambient ambient-two" aria-hidden />
         <SiteNav />

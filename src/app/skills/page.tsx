@@ -1,6 +1,10 @@
+import type { Metadata } from "next";
 import { MaterialIcon } from "@/components/material-icon";
 import { PageShell } from "@/components/page-shell";
-import { skillGroups } from "@/data/portfolio";
+import { skillGroups, siteMetadata } from "@/data/portfolio";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata("skills");
 
 function SkillList({ title, icon, items }: { title: string; icon: string; items: string[] }) {
   return (
@@ -25,7 +29,7 @@ export default function SkillsPage() {
   return (
     <PageShell
       title="Skills"
-      description="Core programming, platform, and engineering foundations from project work and production support."
+      description={siteMetadata.routes.skills.description}
     >
       <section className="space-y-5">
         <SkillList title="Languages" icon="code" items={skillGroups.languages} />

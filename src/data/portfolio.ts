@@ -1,14 +1,97 @@
 export const profile = {
   name: "Nabin Khanal",
   role: "Computer Engineer",
+  headline: "Building reliable backend systems and practical engineering workflows.",
   summary:
-    "Dedicated, goal-oriented engineer with a strong backend and systems focus. I work across support engineering and product development to deliver stable services, faster debugging, and practical automation.",
+    "Backend-focused engineer helping teams stabilize services, shorten debugging loops, and automate repetitive operational work.",
+  currentRole: "Solutions Engineer",
+  currentCompany: "guardsix (formerly Logpoint)",
   location: "Lalitpur, Nepal",
   email: "nabinkhanal688@gmail.com",
   website: "https://nabinkhanal00.com.np",
   github: "https://github.com/nabinkhanal00",
   linkedin: "https://www.linkedin.com/in/nabinkhanal00",
 };
+
+export const siteMetadata = {
+  siteName: "Nabin Khanal Portfolio",
+  defaultTitle: "Nabin Khanal | Computer Engineer",
+  defaultDescription:
+    "Portfolio of Nabin Khanal, a backend-focused computer engineer working across support engineering, systems reliability, and practical automation.",
+  defaultKeywords: [
+    "Nabin Khanal",
+    "Computer Engineer",
+    "Backend Engineer",
+    "Solutions Engineer",
+    "Systems Reliability",
+    "Portfolio",
+    "guardsix",
+  ],
+  socialImage: {
+    url: "/images/nabin-professional-headshot.jpg",
+    width: 921,
+    height: 1152,
+    alt: "Professional portrait of Nabin Khanal",
+  },
+  routes: {
+    home: {
+      title: "Portfolio",
+      path: "/",
+      description:
+        "Backend-focused computer engineer building reliable services, practical debugging workflows, and automation for production teams.",
+    },
+    about: {
+      title: "About",
+      path: "/about",
+      description:
+        "Background, communication strengths, and engineering focus across backend systems, support work, and production troubleshooting.",
+    },
+    projects: {
+      title: "Projects",
+      path: "/projects",
+      description:
+        "Selected backend, systems, graphics, and networking projects that show practical delivery and strong engineering fundamentals.",
+    },
+    skills: {
+      title: "Skills",
+      path: "/skills",
+      description:
+        "Programming languages, tools, and engineering foundations used in project work and production support.",
+    },
+    work: {
+      title: "Work",
+      path: "/work",
+      description:
+        "Professional roles and community work centered on reliability, customer-facing troubleshooting, and backend problem solving.",
+    },
+    contact: {
+      title: "Contact",
+      path: "/contact",
+      description:
+        "Contact Nabin Khanal for hiring conversations, backend engineering opportunities, and systems-focused collaboration.",
+    },
+    contactForm: {
+      title: "Contact Form",
+      path: "/contact/form",
+      description:
+        "Compatibility route for older links that still directs visitors to an active contact path.",
+    },
+  },
+} as const;
+
+export const pageCopy = {
+  about: {
+    paragraphs: [
+      "I work where backend engineering, production support, and clear customer communication meet. The problems I enjoy most involve tracing hard failures, improving service behavior, and turning repeated operational pain into dependable fixes.",
+      "My strongest work shows up in incident analysis, API behavior, and lightweight automation that helps teams move faster with less manual effort.",
+    ],
+  },
+  contact: {
+    heading: "Let's build something useful",
+    summary:
+      "Reach out for hiring conversations, backend engineering roles, or collaboration on systems-focused projects. Email is the fastest way to reach me.",
+  },
+} as const;
 
 export const navigation = [
   { href: "/", label: "Home", icon: "home" },
@@ -60,21 +143,21 @@ export const experience = [
   {
     period: "September 2025 - Present",
     role: "Solutions Engineer",
-    organization: "guardsix (formerly Logpoint)",
+    organization: profile.currentCompany,
     highlights: [
-      "Performed root cause analysis on complex technical issues and resolved underlying failures.",
-      "Managed escalated customer cases with practical workarounds and minimal service interruption.",
-      "Built deep hands-on debugging capability in Java and Python production environments.",
+      "Drove root cause analysis on complex technical issues and resolved the failures behind recurring escalations.",
+      "Managed high-priority customer cases with practical workarounds and minimal service interruption.",
+      "Built deeper hands-on debugging capability across Java and Python production environments.",
     ],
   },
   {
     period: "May 2024 - September 2025",
     role: "Associate Solutions Engineer",
-    organization: "guardsix (formerly Logpoint)",
+    organization: profile.currentCompany,
     highlights: [
       "Resolved customer issues across disk management, networking, database operations, and web servers.",
-      "Identified and fixed software defects that improved service stability and runtime performance.",
-      "Developed Go, Python, and Bash scripts to monitor disk health, memory, and network behavior.",
+      "Identified and fixed software defects that improved service stability and runtime behavior.",
+      "Developed Go, Python, and Bash tooling to monitor disk health, memory usage, and network behavior.",
     ],
   },
   {
@@ -84,7 +167,7 @@ export const experience = [
     highlights: [
       "Developed REST APIs for an educational platform backend.",
       "Implemented OAuth-based authentication and authorization flows.",
-      "Integrated eSewa payment gateway into production workflows.",
+      "Integrated the eSewa payment gateway into production workflows.",
     ],
   },
 ];
@@ -136,47 +219,47 @@ export const projects = [
     title: "Image Inpainting with Partial Convolution",
     stack: ["SvelteKit", "Azure", "FastAPI", "PyTorch"],
     description:
-      "Reconstructs missing or damaged image regions using an encoder decoder network to preserve quality and visual integrity.",
+      "Research-driven image restoration app that reconstructs missing regions with partial convolution and serves inference through a web interface.",
     href: "https://github.com/nabinkhanal00",
   },
   {
     title: "Jobs API",
     stack: ["Node.js", "Express"],
     description:
-      "Backend service that manages clients and job matching workflows for company operations.",
+      "REST API for managing clients, candidates, and job workflows with a predictable service-layer structure.",
     href: "https://github.com/nabinkhanal00",
   },
   {
     title: "Lekh",
     stack: ["Go", "Fiber", "MongoDB"],
     description:
-      "Social platform where writers can publish and share literature-focused posts.",
+      "Literature-focused publishing platform with social posting flows and Mongo-backed APIs for writers and readers.",
     href: "https://github.com/nabinkhanal00",
   },
   {
     title: "BitTorrent Client",
     stack: ["Go"],
-    description: "Custom client to download files through the BitTorrent protocol.",
+    description: "Command-line BitTorrent client in Go that parses torrents, connects to peers, and downloads pieces over the protocol.",
     href: "https://github.com/nabinkhanal00",
   },
   {
     title: "Rubiks",
     stack: ["C++", "OpenGL"],
     description:
-      "Graphical Rubik's Cube simulator with cube motion and scramble solving behavior.",
+      "Interactive OpenGL Rubik's Cube simulator with 3D transforms, animation, and algorithmic move sequences.",
     href: "https://github.com/nabinkhanal00",
   },
   {
     title: "Breakout",
     stack: ["C++", "OpenGL"],
-    description: "Classic brick-breaking game implemented with OpenGL rendering.",
+    description: "Arcade-style Breakout clone built with C++ and OpenGL, including collision handling, rendering, and gameplay loops.",
     href: "https://github.com/nabinkhanal00",
   },
   {
     title: "Pulchowk Campus Network Design",
     stack: ["Cisco Packet Tracer"],
     description:
-      "Designed and simulated campus network infrastructure for practical reliability and coverage.",
+      "Simulated campus network design covering segmentation, routing, and service reliability across academic blocks.",
     href: "https://github.com/nabinkhanal00",
   },
 ];

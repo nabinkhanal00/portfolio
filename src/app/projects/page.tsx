@@ -1,12 +1,16 @@
+import type { Metadata } from "next";
 import { MaterialIcon } from "@/components/material-icon";
 import { PageShell } from "@/components/page-shell";
-import { projects } from "@/data/portfolio";
+import { projects, siteMetadata } from "@/data/portfolio";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata("projects");
 
 export default function ProjectsPage() {
   return (
     <PageShell
       title="Projects"
-      description="A mix of backend services, systems tooling, and graphics/network projects built across academic and professional work."
+      description={siteMetadata.routes.projects.description}
     >
       <section className="space-y-4">
         {projects.map((project) => (
@@ -22,7 +26,7 @@ export default function ProjectsPage() {
               <a
                 href={project.href}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="icon-label text-sm font-semibold text-[var(--accent)] opacity-90 transition group-hover:opacity-100"
               >
                 <MaterialIcon name="open_in_new" className="text-base" />

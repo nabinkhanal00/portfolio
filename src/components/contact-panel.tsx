@@ -1,5 +1,5 @@
 import { MaterialIcon } from "@/components/material-icon";
-import { profile } from "@/data/portfolio";
+import { pageCopy, profile } from "@/data/portfolio";
 
 export function ContactPanel() {
   return (
@@ -7,11 +7,10 @@ export function ContactPanel() {
       <div className="space-y-6 border border-[var(--line)] bg-[var(--surface)] p-7 md:p-8">
         <h2 className="icon-label font-display text-2xl text-[var(--text)] md:text-3xl">
           <MaterialIcon name="handshake" className="text-2xl" />
-          Let&apos;s build something useful
+          {pageCopy.contact.heading}
         </h2>
         <p className="max-w-xl text-base leading-relaxed text-[var(--muted)]">
-          Reach out for backend engineering, support engineering, or collaboration on systems-focused projects.
-          I usually reply quickly via email.
+          {pageCopy.contact.summary}
         </p>
         <div className="flex flex-wrap gap-3">
           <a
@@ -24,7 +23,7 @@ export function ContactPanel() {
           <a
             href={profile.linkedin}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="btn btn-secondary"
           >
             <MaterialIcon name="group" className="text-base" />

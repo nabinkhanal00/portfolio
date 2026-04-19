@@ -9,7 +9,11 @@ type PageShellProps = {
 
 export function PageShell({ title, description, children }: PageShellProps) {
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 pb-20 pt-24 sm:px-5 md:px-8 md:pt-32">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="mx-auto w-full max-w-6xl scroll-mt-28 px-4 pb-20 pt-24 focus:outline-none sm:px-5 md:px-8 md:pt-32"
+    >
       <section className="mb-14 max-w-3xl animate-rise-in">
         <p className="icon-label mb-2 text-xs tracking-[0.24em] text-[var(--muted)] uppercase">
           <MaterialIcon name="article" className="text-sm" />

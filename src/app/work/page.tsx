@@ -1,12 +1,16 @@
+import type { Metadata } from "next";
 import { MaterialIcon } from "@/components/material-icon";
 import { PageShell } from "@/components/page-shell";
-import { campusWork, experience } from "@/data/portfolio";
+import { campusWork, experience, siteMetadata } from "@/data/portfolio";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata("work");
 
 export default function WorkPage() {
   return (
     <PageShell
       title="Work"
-      description="Professional roles and community contributions focused on troubleshooting, backend systems, and engineering mentorship."
+      description={siteMetadata.routes.work.description}
     >
       <section className="space-y-5">
         {experience.map((item) => (

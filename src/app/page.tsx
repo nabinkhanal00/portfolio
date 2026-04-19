@@ -1,13 +1,21 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { MaterialIcon } from "@/components/material-icon";
 import { education, experience, profile, projects } from "@/data/portfolio";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata("home");
 
 export default function Home() {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-4 pb-20 pt-24 sm:px-5 md:px-8 md:pt-32">
+    <main
+      id="main-content"
+      tabIndex={-1}
+      className="mx-auto w-full max-w-6xl scroll-mt-28 px-4 pb-20 pt-24 focus:outline-none sm:px-5 md:px-8 md:pt-32"
+    >
       <section className="grid items-center gap-10 border-b border-[var(--line)] pb-14 md:min-h-[calc(100svh-9rem)] md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:pb-24">
         <div>
           <p className="icon-label animate-rise-in font-mono text-xs tracking-[0.24em] text-[var(--muted)] uppercase">
@@ -15,7 +23,7 @@ export default function Home() {
             {profile.role}
           </p>
           <h1 className="animate-rise-delay mt-4 max-w-3xl font-display text-3xl leading-[1.1] text-[var(--text)] sm:text-4xl md:mt-5 md:text-5xl lg:text-6xl">
-            Building resilient backend systems and practical engineering workflows.
+            {profile.headline}
           </h1>
           <p className="animate-rise-delay mt-6 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:text-lg md:mt-7">
             {profile.summary}
@@ -67,7 +75,7 @@ export default function Home() {
             </p>
             <p className="icon-label mt-2 text-xl text-[var(--text)]">
               <MaterialIcon name="work" className="text-base" />
-              Solutions Engineer, guardsix (formerly Logpoint)
+              {profile.currentRole}, {profile.currentCompany}
             </p>
           </div>
           <div>
@@ -140,7 +148,7 @@ export default function Home() {
           ))}
           <Link href="/projects" className="icon-label inline-block pt-3 text-sm font-semibold text-[var(--accent)] hover:underline">
             <MaterialIcon name="open_in_new" className="text-base" />
-            See all projects
+            Explore all projects
           </Link>
         </div>
       </section>

@@ -8,18 +8,18 @@ export function SiteFooter() {
         <p>
           {profile.name} • {profile.role}
         </p>
-        <p>
+        <p aria-label="Footer links">
           <a href={`mailto:${profile.email}`} className="icon-label hover:text-[var(--text)]">
             <MaterialIcon name="mail" className="text-base" />
             {profile.email}
           </a>
           {" • "}
-          <a href={profile.github} className="icon-label hover:text-[var(--text)]">
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="icon-label hover:text-[var(--text)]">
             <MaterialIcon name="code" className="text-base" />
             GitHub
           </a>
           {" • "}
-          <a href={profile.linkedin} className="icon-label hover:text-[var(--text)]">
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="icon-label hover:text-[var(--text)]">
             <MaterialIcon name="link" className="text-base" />
             LinkedIn
           </a>

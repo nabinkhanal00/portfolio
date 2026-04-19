@@ -1,13 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { MaterialIcon } from "@/components/material-icon";
 import { PageShell } from "@/components/page-shell";
-import { profile } from "@/data/portfolio";
+import { profile, siteMetadata } from "@/data/portfolio";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata("contactForm");
 
 export default function ContactFormPage() {
   return (
     <PageShell
       title="Contact Form"
-      description="This route is kept active for compatibility with older links from the previous site."
+      description={siteMetadata.routes.contactForm.description}
     >
       <section className="max-w-3xl border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
         <p className="leading-relaxed text-[var(--muted)]">

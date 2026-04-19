@@ -1,12 +1,16 @@
+import type { Metadata } from "next";
 import { MaterialIcon } from "@/components/material-icon";
 import { PageShell } from "@/components/page-shell";
-import { education, profile, spokenLanguages } from "@/data/portfolio";
+import { education, pageCopy, siteMetadata, spokenLanguages } from "@/data/portfolio";
+import { buildMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildMetadata("about");
 
 export default function AboutPage() {
   return (
     <PageShell
       title="About"
-      description="Computer engineer focused on backend systems, troubleshooting, and practical platform reliability work."
+      description={siteMetadata.routes.about.description}
     >
       <section className="grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
         <article className="space-y-5 border border-[var(--line)] bg-[var(--surface)] p-7 md:p-8">
@@ -14,11 +18,11 @@ export default function AboutPage() {
             <MaterialIcon name="person" className="text-2xl" />
             Profile
           </h2>
-          <p className="leading-relaxed text-[var(--muted)]">{profile.summary}</p>
-          <p className="leading-relaxed text-[var(--muted)]">
-            I enjoy system debugging, production support, API engineering, and solving operational bottlenecks with
-            lightweight automation.
-          </p>
+          {pageCopy.about.paragraphs.map((paragraph) => (
+            <p key={paragraph} className="leading-relaxed text-[var(--muted)]">
+              {paragraph}
+            </p>
+          ))}
         </article>
 
         <aside className="space-y-5 border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
