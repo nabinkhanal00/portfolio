@@ -53,17 +53,17 @@ export function SiteNav() {
               </Link>
             ))}
           </nav>
-          <ThemeToggle className="rounded-full border border-[var(--line)] p-2 text-[var(--text)] transition hover:border-[var(--accent)]" />
+          <ThemeToggle className="h-10 w-10 rounded-full border border-[var(--line)] text-[var(--text)] transition hover:border-[var(--accent)]" />
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <ThemeToggle className="rounded-full border border-[var(--line)] p-2 text-[var(--text)] transition hover:border-[var(--accent)]" />
+          <ThemeToggle className="h-10 w-10 rounded-full border border-[var(--line)] text-[var(--text)] transition hover:border-[var(--accent)]" />
           <button
             type="button"
             onClick={toggleMobileMenu}
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            className="rounded-full border border-[var(--line)] p-2 text-[var(--text)] transition hover:border-[var(--accent)]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] text-[var(--text)] transition hover:border-[var(--accent)]"
           >
             <MaterialIcon name={mobileOpen ? "close" : "menu"} className="text-xl" />
           </button>

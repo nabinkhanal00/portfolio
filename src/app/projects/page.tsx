@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GitHubIcon } from "@/components/github-icon";
 import { MaterialIcon } from "@/components/material-icon";
 import { PageShell } from "@/components/page-shell";
 import { projects, siteMetadata } from "@/data/portfolio";
@@ -27,10 +28,12 @@ export default function ProjectsPage() {
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="icon-label text-sm font-semibold text-[var(--accent)] opacity-90 transition group-hover:opacity-100"
+                aria-label={`Open ${project.title} on GitHub`}
+                title={`Open ${project.title} on GitHub`}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] text-[var(--accent)] opacity-90 transition group-hover:opacity-100 hover:border-[var(--accent)] hover:bg-[var(--accent-soft)]"
               >
-                <MaterialIcon name="open_in_new" className="text-base" />
-                Repository
+                <GitHubIcon className="h-5 w-5" />
+                <span className="sr-only">Open {project.title} on GitHub</span>
               </a>
             </div>
             <p className="mt-3 max-w-3xl leading-relaxed text-[var(--muted)]">{project.description}</p>

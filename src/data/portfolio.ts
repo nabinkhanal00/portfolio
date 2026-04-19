@@ -70,12 +70,6 @@ export const siteMetadata = {
       description:
         "Contact Nabin Khanal for hiring conversations, backend engineering opportunities, and systems-focused collaboration.",
     },
-    contactForm: {
-      title: "Contact Form",
-      path: "/contact/form",
-      description:
-        "Compatibility route for older links that still directs visitors to an active contact path.",
-    },
   },
 } as const;
 
@@ -88,6 +82,7 @@ export const pageCopy = {
   },
   contact: {
     heading: "Let's build something useful",
+    intro: "Direct contact details for hiring conversations, collaboration, and engineering opportunities.",
     summary:
       "Reach out for hiring conversations, backend engineering roles, or collaboration on systems-focused projects. Email is the fastest way to reach me.",
   },
@@ -220,47 +215,47 @@ export const projects = [
     stack: ["SvelteKit", "Azure", "FastAPI", "PyTorch"],
     description:
       "Research-driven image restoration app that reconstructs missing regions with partial convolution and serves inference through a web interface.",
-    href: "https://github.com/nabinkhanal00",
+    href: "https://github.com/nabinkhanal00/image-inpainting-frontend",
   },
   {
     title: "Jobs API",
     stack: ["Node.js", "Express"],
     description:
       "REST API for managing clients, candidates, and job workflows with a predictable service-layer structure.",
-    href: "https://github.com/nabinkhanal00",
+    href: "https://github.com/nabinkhanal00/jobs-api",
   },
   {
     title: "Lekh",
     stack: ["Go", "Fiber", "MongoDB"],
     description:
       "Literature-focused publishing platform with social posting flows and Mongo-backed APIs for writers and readers.",
-    href: "https://github.com/nabinkhanal00",
+    href: "https://github.com/nabinkhanal00/lekh-backend",
   },
   {
     title: "BitTorrent Client",
     stack: ["Go"],
     description: "Command-line BitTorrent client in Go that parses torrents, connects to peers, and downloads pieces over the protocol.",
-    href: "https://github.com/nabinkhanal00",
+    href: "https://github.com/nabinkhanal00/gobittorrent",
   },
   {
     title: "Rubiks",
     stack: ["C++", "OpenGL"],
     description:
       "Interactive OpenGL Rubik's Cube simulator with 3D transforms, animation, and algorithmic move sequences.",
-    href: "https://github.com/nabinkhanal00",
+    href: "https://github.com/nabinkhanal00/rubiks",
   },
   {
     title: "Breakout",
     stack: ["C++", "OpenGL"],
     description: "Arcade-style Breakout clone built with C++ and OpenGL, including collision handling, rendering, and gameplay loops.",
-    href: "https://github.com/nabinkhanal00",
+    href: "https://github.com/nabinkhanal00/breakout",
   },
   {
     title: "Pulchowk Campus Network Design",
     stack: ["Cisco Packet Tracer"],
     description:
       "Simulated campus network design covering segmentation, routing, and service reliability across academic blocks.",
-    href: "https://github.com/nabinkhanal00",
+    href: "https://github.com/nabinkhanal00/computer-network-lab-files",
   },
 ];
 

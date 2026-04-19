@@ -101,7 +101,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       onClick={toggleTheme}
       aria-label={label}
       title={label}
-      className={className}
+      className={`inline-flex items-center justify-center leading-none ${className ?? ""}`}
     >
       <MaterialIcon name={icon} className="text-base" />
       <span className="sr-only">{label}</span>

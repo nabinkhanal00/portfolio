@@ -30,11 +30,11 @@ export default function AboutPage() {
             <MaterialIcon name="translate" className="text-2xl" />
             Languages
           </h2>
-          <ul className="space-y-2 text-[var(--muted)]">
+          <ul className="space-y-3 text-[var(--muted)]">
             {spokenLanguages.map((language) => (
-              <li key={language} className="icon-label">
-                <MaterialIcon name="speech_to_text" className="text-base" />
-                {language}
+              <li key={language} className="flex items-start gap-3">
+                <MaterialIcon name="speech_to_text" className="mt-0.5 shrink-0 text-base" />
+                <span>{language}</span>
               </li>
             ))}
           </ul>
