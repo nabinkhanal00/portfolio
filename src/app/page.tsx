@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { MaterialIcon } from "@/components/material-icon";
 import { education, experience, profile, projects } from "@/data/portfolio";
@@ -38,6 +39,16 @@ export default function Home() {
         </div>
 
         <aside className="space-y-6 border border-[var(--line)] bg-[var(--surface-strong)] p-6 md:space-y-7 md:p-8">
+          <div className="rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-2">
+            <Image
+              src="/images/nabin-professional-headshot.png"
+              alt="Professional portrait of Nabin Khanal"
+              width={1024}
+              height={1024}
+              priority
+              className="h-auto w-full rounded-xl object-cover"
+            />
+          </div>
           <div>
             <p className="icon-label text-xs tracking-[0.16em] text-[var(--muted)] uppercase">
               <MaterialIcon name="location_on" className="text-sm" />
