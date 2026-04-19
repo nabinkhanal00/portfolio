@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MaterialIcon } from "@/components/material-icon";
 import { navigation, profile } from "@/data/portfolio";
 
 export function SiteNav() {
@@ -16,8 +17,9 @@ export function SiteNav() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-1 transition hover:bg-[var(--accent-soft)] hover:text-[var(--text)]"
+              className="icon-label rounded-full px-3 py-1 transition hover:bg-[var(--accent-soft)] hover:text-[var(--text)]"
             >
+              <MaterialIcon name={item.icon} className="text-base" />
               {item.label}
             </Link>
           ))}

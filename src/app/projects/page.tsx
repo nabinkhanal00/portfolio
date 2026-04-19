@@ -1,3 +1,4 @@
+import { MaterialIcon } from "@/components/material-icon";
 import { PageShell } from "@/components/page-shell";
 import { projects } from "@/data/portfolio";
 
@@ -14,18 +15,23 @@ export default function ProjectsPage() {
             className="group border border-[var(--line)] bg-white p-6 transition hover:border-[var(--accent)] md:p-7"
           >
             <div className="flex flex-wrap items-start justify-between gap-4">
-              <h2 className="text-2xl text-[var(--text)] md:text-3xl">{project.title}</h2>
+              <h2 className="icon-label text-2xl text-[var(--text)] md:text-3xl">
+                <MaterialIcon name="terminal" className="text-2xl" />
+                {project.title}
+              </h2>
               <a
                 href={project.href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-semibold text-[var(--accent)] opacity-90 transition group-hover:opacity-100"
+                className="icon-label text-sm font-semibold text-[var(--accent)] opacity-90 transition group-hover:opacity-100"
               >
+                <MaterialIcon name="open_in_new" className="text-base" />
                 Repository
               </a>
             </div>
             <p className="mt-3 max-w-3xl leading-relaxed text-[var(--muted)]">{project.description}</p>
-            <p className="mt-4 font-mono text-xs tracking-[0.13em] text-[var(--muted)] uppercase">
+            <p className="icon-label mt-4 font-mono text-xs tracking-[0.13em] text-[var(--muted)] uppercase">
+              <MaterialIcon name="memory" className="text-sm" />
               {project.stack.join(" • ")}
             </p>
           </article>

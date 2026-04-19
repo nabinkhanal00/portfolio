@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MaterialIcon } from "@/components/material-icon";
 import { PageShell } from "@/components/page-shell";
 import { profile } from "@/data/portfolio";
 
@@ -15,14 +16,16 @@ export default function ContactFormPage() {
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+            className="icon-label rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
           >
+            <MaterialIcon name="contact_page" className="text-base" />
             Go to Contact Page
           </Link>
           <a
             href={`mailto:${profile.email}`}
-            className="rounded-full border border-[var(--line)] px-6 py-2.5 text-sm font-semibold text-[var(--text)]"
+            className="icon-label rounded-full border border-[var(--line)] px-6 py-2.5 text-sm font-semibold text-[var(--text)]"
           >
+            <MaterialIcon name="mail" className="text-base" />
             Email Directly
           </a>
         </div>

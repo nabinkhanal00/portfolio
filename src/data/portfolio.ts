@@ -12,12 +12,12 @@ export const profile = {
 };
 
 export const navigation = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/projects", label: "Projects" },
-  { href: "/skills", label: "Skills" },
-  { href: "/work", label: "Work" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", icon: "home" },
+  { href: "/about", label: "About", icon: "person" },
+  { href: "/projects", label: "Projects", icon: "deployed_code" },
+  { href: "/skills", label: "Skills", icon: "terminal" },
+  { href: "/work", label: "Work", icon: "work_history" },
+  { href: "/contact", label: "Contact", icon: "mail" },
 ];
 
 export const skillGroups = {

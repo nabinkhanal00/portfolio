@@ -1,3 +1,4 @@
+import { MaterialIcon } from "@/components/material-icon";
 import { profile } from "@/data/portfolio";
 
 export function SiteFooter() {
@@ -8,15 +9,18 @@ export function SiteFooter() {
           {profile.name} • {profile.role}
         </p>
         <p>
-          <a href={`mailto:${profile.email}`} className="hover:text-[var(--text)]">
+          <a href={`mailto:${profile.email}`} className="icon-label hover:text-[var(--text)]">
+            <MaterialIcon name="mail" className="text-base" />
             {profile.email}
           </a>
           {" • "}
-          <a href={profile.github} className="hover:text-[var(--text)]">
+          <a href={profile.github} className="icon-label hover:text-[var(--text)]">
+            <MaterialIcon name="code" className="text-base" />
             GitHub
           </a>
           {" • "}
-          <a href={profile.linkedin} className="hover:text-[var(--text)]">
+          <a href={profile.linkedin} className="icon-label hover:text-[var(--text)]">
+            <MaterialIcon name="link" className="text-base" />
             LinkedIn
           </a>
         </p>
