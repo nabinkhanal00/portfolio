@@ -32,7 +32,7 @@ export function ContactPanel() {
           </a>
         </div>
       </div>
-      <aside className="space-y-3 border border-[var(--line)] bg-white p-7 md:p-8">
+      <aside className="space-y-3 border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
         <p className="icon-label text-xs tracking-[0.2em] text-[var(--muted)] uppercase">
           <MaterialIcon name="contact_page" className="text-sm" />
           Contact Details

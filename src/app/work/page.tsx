@@ -10,7 +10,7 @@ export default function WorkPage() {
     >
       <section className="space-y-5">
         {experience.map((item) => (
-          <article key={`${item.role}-${item.period}`} className="border border-[var(--line)] bg-white p-7 md:p-8">
+          <article key={`${item.role}-${item.period}`} className="border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
             <p className="icon-label font-mono text-xs tracking-[0.16em] text-[var(--muted)] uppercase">
               <MaterialIcon name="schedule" className="text-sm" />
               {item.period}

@@ -9,7 +9,7 @@ export default function ContactFormPage() {
       title="Contact Form"
       description="This route is kept active for compatibility with older links from the previous site."
     >
-      <section className="max-w-3xl border border-[var(--line)] bg-white p-7 md:p-8">
+      <section className="max-w-3xl border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
         <p className="leading-relaxed text-[var(--muted)]">
           If you reached this page from an old link, use the main contact page to get in touch.
         </p>

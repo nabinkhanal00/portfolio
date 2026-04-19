@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import { profile } from "@/data/portfolio";
 import "./globals.css";
+
+const themeInitScript = `
+(() => {
+  try {
+    const key = "nk-theme";
+    const saved = localStorage.getItem(key);
+    const isDark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.classList.toggle("dark", isDark);
+    document.documentElement.dataset.theme = isDark ? "dark" : "light";
+  } catch (_) {}
+})();
+`;
 
 const display = Space_Grotesk({
   variable: "--font-display",
@@ -40,7 +53,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${mono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${display.variable} ${mono.variable}`}>
+      <head>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
+      </head>
       <body>
         <div className="ambient ambient-one" aria-hidden />
         <div className="ambient ambient-two" aria-hidden />

@@ -6,30 +6,30 @@ export default function Home() {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-5 pb-24 pt-28 md:px-8 md:pt-32">
-      <section className="grid min-h-[calc(100svh-9rem)] items-center gap-12 border-b border-[var(--line)] pb-16 md:grid-cols-[1.2fr_0.8fr] md:pb-24">
+    <main className="mx-auto w-full max-w-6xl px-4 pb-20 pt-24 sm:px-5 md:px-8 md:pt-32">
+      <section className="grid items-center gap-10 border-b border-[var(--line)] pb-14 md:min-h-[calc(100svh-9rem)] md:grid-cols-[1.2fr_0.8fr] md:gap-12 md:pb-24">
         <div>
           <p className="icon-label animate-rise-in font-mono text-xs tracking-[0.24em] text-[var(--muted)] uppercase">
             <MaterialIcon name="engineering" className="text-sm" />
             {profile.role}
           </p>
-          <h1 className="animate-rise-delay mt-5 max-w-3xl font-display text-5xl leading-tight text-[var(--text)] md:text-7xl">
+          <h1 className="animate-rise-delay mt-4 max-w-3xl font-display text-4xl leading-tight text-[var(--text)] sm:text-5xl md:mt-5 md:text-7xl">
             Building resilient backend systems and practical engineering workflows.
           </h1>
-          <p className="animate-rise-delay mt-7 max-w-2xl text-lg leading-relaxed text-[var(--muted)]">
+          <p className="animate-rise-delay mt-6 max-w-2xl text-base leading-relaxed text-[var(--muted)] sm:text-lg md:mt-7">
             {profile.summary}
           </p>
-          <div className="animate-rise-delay mt-9 flex flex-wrap gap-3">
+          <div className="animate-rise-delay mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap">
             <Link
               href="/projects"
-              className="icon-label rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110"
+              className="icon-label w-full justify-center rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white transition hover:brightness-110 sm:w-auto"
             >
               <MaterialIcon name="deployed_code" className="text-base" />
               View Projects
             </Link>
             <Link
               href="/contact"
-              className="icon-label rounded-full border border-[var(--line)] px-6 py-2.5 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--accent)]"
+              className="icon-label w-full justify-center rounded-full border border-[var(--line)] px-6 py-2.5 text-sm font-semibold text-[var(--text)] transition hover:border-[var(--accent)] sm:w-auto"
             >
               <MaterialIcon name="mail" className="text-base" />
               Contact Me
@@ -37,7 +37,7 @@ export default function Home() {
           </div>
         </div>
 
-        <aside className="space-y-7 border border-[var(--line)] bg-[color:var(--surface)] p-7 md:p-8">
+        <aside className="space-y-6 border border-[var(--line)] bg-[var(--surface-strong)] p-6 md:space-y-7 md:p-8">
           <div>
             <p className="icon-label text-xs tracking-[0.16em] text-[var(--muted)] uppercase">
               <MaterialIcon name="location_on" className="text-sm" />
@@ -113,7 +113,7 @@ export default function Home() {
           {featuredProjects.map((project) => (
             <article
               key={project.title}
-              className="group border border-[var(--line)] bg-white p-6 transition hover:-translate-y-0.5 hover:border-[var(--accent)]"
+              className="group border border-[var(--line)] bg-[var(--surface-strong)] p-6 transition hover:-translate-y-0.5 hover:border-[var(--accent)]"
             >
               <h3 className="icon-label text-2xl text-[var(--text)]">
                 <MaterialIcon name="rocket_launch" className="text-2xl" />
