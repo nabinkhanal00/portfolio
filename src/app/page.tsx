@@ -75,7 +75,7 @@ export default function Home() {
         </div>
         <div className="space-y-12">
           {experience.slice(0, 2).map((item) => (
-            <article key={`${item.organization}-${item.period}`} className="relative pl-8 before:absolute before:left-0 before:top-2 before:h-full before:w-px before:bg-[var(--line)] last:before:h-[calc(100%-8px)]">
+            <article key={`${item.organization}-${item.period}`} className="card-hover group relative rounded-3xl border border-transparent p-8 pl-8 transition-all hover:bg-[var(--surface-strong)] before:absolute before:left-0 before:top-2 before:h-full before:w-px before:bg-[var(--line)] last:before:h-[calc(100%-8px)]">
               <div className="absolute left-[-4px] top-2 h-2 w-2 rounded-full bg-[var(--accent)] ring-4 ring-[var(--accent-soft)]"></div>
               <p className="font-mono text-[11px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase">
                 {item.period}
@@ -111,7 +111,7 @@ export default function Home() {
           {featuredProjects.map((project) => (
             <article
               key={project.title}
-              className="group relative overflow-hidden rounded-3xl border border-[var(--line)] bg-[var(--surface-strong)] p-8 transition-all hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-xl hover:shadow-[var(--accent-soft)]"
+              className="card-hover group relative overflow-hidden rounded-3xl border border-[var(--line)] bg-[var(--surface-strong)] p-8"
             >
               <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-[var(--accent-soft)] opacity-0 transition-opacity group-hover:opacity-20"></div>
               <h3 className="icon-label text-2xl font-medium text-[var(--text)]">
@@ -147,7 +147,7 @@ export default function Home() {
         </div>
         <div className="space-y-10">
           {education.map((item) => (
-            <article key={item.period} className="group relative rounded-3xl border border-dashed border-[var(--line)] p-8 transition-colors hover:border-[var(--accent)] hover:bg-[var(--surface)]">
+            <article key={item.period} className="card-hover group relative rounded-3xl border border-dashed border-[var(--line)] p-8 hover:bg-[var(--surface)]">
               <p className="font-mono text-[10px] font-bold tracking-[0.2em] text-[var(--muted)] uppercase">
                 {item.period}
               </p>

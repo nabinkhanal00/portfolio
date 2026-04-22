@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata("skills");
 
 function SkillList({ title, icon, items }: { title: string; icon: string; items: string[] }) {
   return (
-    <article className="border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
+    <article className="card-hover rounded-3xl border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
       <h2 className="icon-label font-display text-2xl text-[var(--text)] md:text-3xl">
         <MaterialIcon name={icon} className="text-2xl" />
         {title}

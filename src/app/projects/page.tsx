@@ -17,7 +17,7 @@ export default function ProjectsPage() {
         {projects.map((project) => (
           <article
             key={project.title}
-            className="group border border-[var(--line)] bg-[var(--surface-strong)] p-6 transition hover:border-[var(--accent)] md:p-7"
+            className="card-hover group rounded-3xl border border-[var(--line)] bg-[var(--surface-strong)] p-6 md:p-7"
           >
             <div className="flex flex-wrap items-start justify-between gap-4">
               <h2 className="icon-label text-2xl text-[var(--text)] md:text-3xl">

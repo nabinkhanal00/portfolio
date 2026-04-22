@@ -13,7 +13,7 @@ export default function AboutPage() {
       description={siteMetadata.routes.about.description}
     >
       <section className="grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
-        <article className="space-y-5 border border-[var(--line)] bg-[var(--surface)] p-7 md:p-8">
+        <article className="card-hover rounded-3xl border border-[var(--line)] bg-[var(--surface)] p-7 md:p-8">
           <h2 className="icon-label font-display text-2xl text-[var(--text)] md:text-3xl">
             <MaterialIcon name="person" className="text-2xl" />
             Profile
@@ -25,7 +25,7 @@ export default function AboutPage() {
           ))}
         </article>
 
-        <aside className="space-y-5 border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
+        <aside className="card-hover rounded-3xl border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
           <h2 className="icon-label font-display text-2xl text-[var(--text)]">
             <MaterialIcon name="translate" className="text-2xl" />
             Languages
@@ -47,7 +47,7 @@ export default function AboutPage() {
           Education
         </h2>
         {education.map((item) => (
-          <article key={item.period} className="border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
+          <article key={item.period} className="card-hover rounded-3xl border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
             <p className="icon-label font-mono text-xs tracking-[0.16em] text-[var(--muted)] uppercase">
               <MaterialIcon name="schedule" className="text-sm" />
               {item.period}
