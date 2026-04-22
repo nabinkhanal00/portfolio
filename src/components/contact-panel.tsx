@@ -30,24 +30,39 @@ export function ContactPanel() {
             Connect on LinkedIn
           </a>
         </div>
-        <div className="grid gap-4 border-t border-[var(--line)] pt-6 md:grid-cols-[minmax(0,1.35fr)_minmax(0,0.9fr)]">
-          <p className="flex items-start gap-3 text-lg text-[var(--text)]">
-            <MaterialIcon name="mail" className="mt-1 shrink-0 text-base" />
-            <span className="min-w-0 break-all">{profile.email}</span>
-          </p>
-          <p className="flex items-start gap-3 text-base text-[var(--muted)] md:justify-self-end">
-            <MaterialIcon name="location_on" className="mt-0.5 shrink-0 text-base" />
-            <span>{profile.location}</span>
-          </p>
-          <a
-            href={profile.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-start gap-3 text-sm text-[var(--accent)] hover:underline md:col-span-2"
-          >
-            <MaterialIcon name="language" className="mt-0.5 shrink-0 text-base" />
-            <span>{profile.website.replace("https://", "")}</span>
-          </a>
+        <div className="grid gap-6 border-t border-[var(--line)] pt-8 md:grid-cols-2">
+          <div className="space-y-4">
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.2em] text-[var(--muted)] uppercase">Location</p>
+              <p className="mt-1 flex items-center gap-2 text-base text-[var(--text)]">
+                <MaterialIcon name="location_on" className="text-base text-[var(--accent)]" />
+                {profile.location}
+              </p>
+            </div>
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.2em] text-[var(--muted)] uppercase">Current Role</p>
+              <p className="mt-1 flex items-center gap-2 text-base text-[var(--text)]">
+                <MaterialIcon name="work" className="text-base text-[var(--accent)]" />
+                {profile.currentRole} @ {profile.currentCompany}
+              </p>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.2em] text-[var(--muted)] uppercase">Contact Email</p>
+              <a href={`mailto:${profile.email}`} className="mt-1 flex items-center gap-2 text-base text-[var(--accent)] hover:underline">
+                <MaterialIcon name="mail" className="text-base" />
+                {profile.email}
+              </a>
+            </div>
+            <div>
+              <p className="text-[10px] font-bold tracking-[0.2em] text-[var(--muted)] uppercase">Website</p>
+              <a href={profile.website} target="_blank" rel="noopener noreferrer" className="mt-1 flex items-center gap-2 text-base text-[var(--accent)] hover:underline">
+                <MaterialIcon name="language" className="text-base" />
+                {profile.website.replace("https://", "")}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -52,8 +52,6 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
-        <div className="ambient ambient-one" aria-hidden />
-        <div className="ambient ambient-two" aria-hidden />
         <SiteNav />
         {children}
         <SiteFooter />
