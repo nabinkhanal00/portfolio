@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { MaterialIcon } from "@/components/material-icon";
-import { education, experience, profile, projects } from "@/data/portfolio";
+import { education, experience, focusAreas, profile, projects } from "@/data/portfolio";
 import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata("home");
@@ -60,7 +60,49 @@ export default function Home() {
           <p className="animate-rise-delay mt-8 max-w-2xl text-lg leading-relaxed text-[var(--muted)] md:mt-10 md:text-xl">
             {profile.summary}
           </p>
+          <div className="animate-rise-delay mt-8 flex flex-wrap gap-3">
+            <Link href="/resume" className="btn btn-primary">
+              <MaterialIcon name="description" className="text-base" />
+              View resume
+            </Link>
+            <Link href="/projects" className="btn btn-secondary">
+              <MaterialIcon name="deployed_code" className="text-base" />
+              Explore projects
+            </Link>
+            <a href="/Resume.pdf" download className="btn btn-secondary">
+              <MaterialIcon name="download" className="text-base" />
+              Download PDF
+            </a>
+          </div>
+          <p className="animate-rise-delay mt-4 flex flex-wrap gap-2 text-xs font-medium tracking-wide text-[var(--muted)]">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--line)] bg-[var(--surface-strong)] px-3 py-1">
+              <MaterialIcon name="lan" className="text-sm text-[var(--accent)]" /> Distributed Systems
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--line)] bg-[var(--surface-strong)] px-3 py-1">
+              <MaterialIcon name="memory" className="text-sm text-[var(--accent)]" /> OS & Networking
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--line)] bg-[var(--surface-strong)] px-3 py-1">
+              <MaterialIcon name="neurology" className="text-sm text-[var(--accent)]" /> AI for Systems
+            </span>
+          </p>
         </div>
+      </section>
+
+      <section className="grid gap-6 border-b border-[var(--line)] py-12">
+        <div className="grid gap-4 md:grid-cols-3">
+          {focusAreas.map((area) => (
+            <article key={area.title} className="card-hover rounded-3xl border border-[var(--line)] bg-[var(--surface-strong)] p-6">
+              <h3 className="icon-label text-lg font-bold text-[var(--text)]">
+                <MaterialIcon name={area.icon} className="text-xl text-[var(--accent)]" />
+                {area.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{area.description}</p>
+            </article>
+          ))}
+        </div>
+        <p className="mx-auto max-w-3xl text-center text-sm leading-relaxed text-[var(--muted)]">
+          I&apos;m especially interested in <span className="font-semibold text-[var(--text)]">AI for systems</span> — using learning and automation to make infrastructure more observable, self-healing, and efficient without sacrificing systems rigor.
+        </p>
       </section>
 
       <section className="grid gap-12 border-b border-[var(--line)] py-20 md:grid-cols-[0.7fr_1.3fr]">
@@ -70,8 +112,12 @@ export default function Home() {
             Experience
           </h2>
           <p className="text-sm leading-relaxed text-[var(--muted)]">
-            My professional journey so far.
+            Production reliability, distributed debugging, and systems engineering in enterprise environments.
           </p>
+          <Link href="/work" className="icon-label inline-flex text-sm font-semibold text-[var(--accent)] hover:underline">
+            <MaterialIcon name="east" className="text-base" />
+            Full work history
+          </Link>
         </div>
         <div className="space-y-12">
           {experience.slice(0, 2).map((item) => (
@@ -104,7 +150,7 @@ export default function Home() {
             Projects
           </h2>
           <p className="text-sm leading-relaxed text-[var(--muted)]">
-            A selection of my recent work and open-source contributions.
+            Systems, networking, and AI — from BitTorrent and campus network design to PyTorch inpainting and Go backends.
           </p>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
@@ -132,6 +178,44 @@ export default function Home() {
             <MaterialIcon name="east" className="text-lg" />
             Explore all projects
           </Link>
+        </div>
+      </section>
+
+      <section className="grid gap-12 border-b border-[var(--line)] py-20 md:grid-cols-[0.7fr_1.3fr]">
+        <div className="sticky-section-title space-y-4">
+          <h2 className="icon-label font-display text-4xl text-[var(--text)]">
+            <MaterialIcon name="description" className="text-3xl text-[var(--accent)]" />
+            Resume
+          </h2>
+          <p className="text-sm leading-relaxed text-[var(--muted)]">
+            One-page overview of systems, infrastructure, and AI experience. Available as PDF and interactive view.
+          </p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link href="/resume" className="btn btn-primary">
+              <MaterialIcon name="visibility" className="text-base" />
+              View resume
+            </Link>
+            <a href="/Resume.pdf" download className="btn btn-secondary">
+              <MaterialIcon name="download" className="text-base" />
+              Download PDF
+            </a>
+          </div>
+        </div>
+        <div className="rounded-3xl border border-[var(--line)] bg-[var(--surface-strong)] p-7 md:p-8">
+          <p className="icon-label font-mono text-xs font-bold tracking-[0.16em] text-[var(--accent)] uppercase">
+            <MaterialIcon name="engineering" className="text-sm" />
+            Systems Engineer • Lalitpur, Nepal
+          </p>
+          <h3 className="mt-3 text-2xl font-bold text-[var(--text)]">Nabin Khanal</h3>
+          <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">
+            Focused on distributed systems, OS & networking, and AI-augmented infrastructure. Currently at guardsix building reliability into production systems.
+          </p>
+          <ul className="mt-6 space-y-2 text-sm text-[var(--muted)]">
+            <li className="icon-label"><MaterialIcon name="check_circle" className="text-sm text-[var(--accent)]" /> Systems programming in Go, Rust, C/C++, Python</li>
+            <li className="icon-label"><MaterialIcon name="check_circle" className="text-sm text-[var(--accent)]" /> Linux, Docker, distributed debugging</li>
+            <li className="icon-label"><MaterialIcon name="check_circle" className="text-sm text-[var(--accent)]" /> PyTorch • AI for reliability & ML infra</li>
+          </ul>
+          <p className="mt-6 text-xs text-[var(--muted)]">PDF updated August 2026 • <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--accent)] hover:underline">Open PDF</a></p>
         </div>
       </section>
 

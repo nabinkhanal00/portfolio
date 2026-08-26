@@ -1,9 +1,9 @@
 export const profile = {
   name: "Nabin Khanal",
-  role: "Computer Engineer",
-  headline: "Building reliable backend systems and practical engineering workflows.",
+  role: "Systems Engineer • Distributed Systems & AI",
+  headline: "Building reliable systems at the intersection of infrastructure and intelligence.",
   summary:
-    "Backend-focused engineer helping teams stabilize services, shorten debugging loops, and automate repetitive operational work.",
+    "Systems-focused engineer passionate about distributed systems, infrastructure reliability, and AI — building low-level, production-grade systems and exploring how AI reshapes how we design, debug, and scale them.",
   currentRole: "Solutions Engineer",
   currentCompany: "guardsix (formerly Logpoint)",
   location: "Lalitpur, Nepal",
@@ -15,15 +15,20 @@ export const profile = {
 
 export const siteMetadata = {
   siteName: "Nabin Khanal Portfolio",
-  defaultTitle: "Nabin Khanal | Computer Engineer",
+  defaultTitle: "Nabin Khanal | Systems Engineer",
   defaultDescription:
-    "Portfolio of Nabin Khanal, a backend-focused computer engineer working across support engineering, systems reliability, and practical automation.",
+    "Portfolio of Nabin Khanal — systems engineer focused on distributed systems, operating systems, networking, and AI-augmented infrastructure. Building reliable, low-level systems and exploring AI for systems reliability and automation.",
   defaultKeywords: [
     "Nabin Khanal",
-    "Computer Engineer",
+    "Systems Engineer",
+    "Distributed Systems",
+    "Operating Systems",
+    "Computer Networks",
+    "Infrastructure",
+    "AI",
+    "Machine Learning",
     "Backend Engineer",
     "Solutions Engineer",
-    "Systems Reliability",
     "Portfolio",
     "guardsix",
   ],
@@ -38,37 +43,43 @@ export const siteMetadata = {
       title: "Portfolio",
       path: "/",
       description:
-        "Backend-focused computer engineer building reliable services, practical debugging workflows, and automation for production teams.",
+        "Systems engineer focused on distributed systems, OS, networking, and reliability — building production-grade infrastructure and exploring AI for intelligent systems.",
     },
     about: {
       title: "About",
       path: "/about",
       description:
-        "Background, communication strengths, and engineering focus across backend systems, support work, and production troubleshooting.",
+        "Systems-focused engineer with a deep interest in distributed systems, OS internals, networking, and how AI can make infrastructure more observable, resilient, and autonomous.",
     },
     projects: {
       title: "Projects",
       path: "/projects",
       description:
-        "Selected backend, systems, graphics, and networking projects that show practical delivery and strong engineering fundamentals.",
+        "Systems, networking, and AI projects — from BitTorrent and network design to image inpainting with deep learning and high-performance backends.",
     },
     skills: {
       title: "Skills",
       path: "/skills",
       description:
-        "Programming languages, tools, and engineering foundations used in project work and production support.",
+        "Systems programming, distributed systems, networking, and AI/ML — languages, platforms, and fundamentals for building reliable infrastructure.",
     },
     work: {
       title: "Work",
       path: "/work",
       description:
-        "Professional roles and community work centered on reliability, customer-facing troubleshooting, and backend problem solving.",
+        "Experience in systems reliability, production debugging, and customer-facing engineering across distributed and enterprise infrastructure.",
+    },
+    resume: {
+      title: "Resume",
+      path: "/resume",
+      description:
+        "Resume of Nabin Khanal — systems engineer specializing in distributed systems, infrastructure, and AI. Download PDF or view online.",
     },
     contact: {
       title: "Contact",
       path: "/contact",
       description:
-        "Contact Nabin Khanal for hiring conversations, backend engineering opportunities, and systems-focused collaboration.",
+        "Contact Nabin Khanal for systems engineering roles, distributed systems work, AI infrastructure, and collaboration.",
     },
   },
 } as const;
@@ -76,15 +87,16 @@ export const siteMetadata = {
 export const pageCopy = {
   about: {
     paragraphs: [
-      "I work where backend engineering, production support, and clear customer communication meet. The problems I enjoy most involve tracing hard failures, improving service behavior, and turning repeated operational pain into dependable fixes.",
-      "My strongest work shows up in incident analysis, API behavior, and lightweight automation that helps teams move faster with less manual effort.",
+      "I'm a systems-focused engineer who loves understanding how things work under the hood — from operating systems and networks to distributed coordination and failure modes. I enjoy tracing hard failures across the stack, reasoning about concurrency and consistency, and turning flaky, manual operations into reliable, observable systems.",
+      "Recently, I've been exploring how AI augments systems work — from intelligent debugging and anomaly detection to ML-serving infrastructure and AI-assisted reliability. My goal is to build production-grade infrastructure that is both deeply principled in systems and augmented by intelligence.",
+      "Currently a Solutions Engineer at guardsix (formerly Logpoint), I work close to production — debugging distributed enterprise systems across disk, network, database, and service layers in Java and Python environments.",
     ],
   },
   contact: {
-    heading: "Let's build something useful",
-    intro: "Direct contact details for hiring conversations, collaboration, and engineering opportunities.",
+    heading: "Let's build resilient systems",
+    intro: "Direct contact details for hiring, collaboration, and systems & AI engineering opportunities.",
     summary:
-      "Reach out for hiring conversations, backend engineering roles, or collaboration on systems-focused projects. Email is the fastest way to reach me.",
+      "Reach out for systems engineering roles, distributed systems / infrastructure work, or AI + systems collaboration. Email is the fastest way to reach me.",
   },
 } as const;
 
@@ -94,27 +106,30 @@ export const navigation = [
   { href: "/projects", label: "Projects", icon: "deployed_code" },
   { href: "/skills", label: "Skills", icon: "terminal" },
   { href: "/work", label: "Work", icon: "work_history" },
+  { href: "/resume", label: "Resume", icon: "description" },
   { href: "/contact", label: "Contact", icon: "mail" },
 ];
 
 export const skillGroups = {
   languages: [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "SQL",
     "C",
     "C++",
-    "Python",
-    "Golang",
     "Rust",
+    "Go",
+    "Python",
+    "JavaScript",
+    "SQL",
+    "HTML",
+    "CSS",
   ],
   technologies: [
+    "Linux",
     "Git",
     "GitHub",
-    "Linux",
     "Docker",
     "GitHub Actions",
+    "PyTorch",
+    "FastAPI",
     "React",
     "Svelte",
     "Flask",
@@ -124,15 +139,34 @@ export const skillGroups = {
     "Cisco Packet Tracer",
   ],
   courses: [
+    "Distributed Systems",
+    "Operating Systems",
+    "Computer Networks",
+    "Data Structures and Algorithms",
     "Object Oriented Programming",
     "Software Engineering",
-    "Project Management",
-    "Data Structures and Algorithms",
-    "Distributed Systems",
-    "Computer Networks",
     "Security Operations Fundamentals",
+    "Project Management",
   ],
 };
+
+export const focusAreas = [
+  {
+    title: "Distributed Systems",
+    icon: "lan",
+    description: "Consistency, coordination, replication, and failure handling in real-world production systems.",
+  },
+  {
+    title: "Systems & Infra",
+    icon: "memory",
+    description: "OS internals, networking, observability, and building reliable low-level components in Go / Rust / C++.",
+  },
+  {
+    title: "AI for Systems",
+    icon: "neurology",
+    description: "Exploring ML-serving infra, anomaly detection, intelligent debugging, and AI-augmented reliability — e.g. partial-convolution inpainting with PyTorch.",
+  },
+];
 
 export const experience = [
   {
