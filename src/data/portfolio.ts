@@ -124,9 +124,11 @@ export const skillGroups = {
   ],
   technologies: [
     "Linux",
+    "Docker",
+    "Kubernetes",
+    "eBPF",
     "Git",
     "GitHub",
-    "Docker",
     "GitHub Actions",
     "PyTorch",
     "FastAPI",
@@ -245,51 +247,65 @@ export const education = [
 
 export const projects = [
   {
+    title: "MapReduce",
+    stack: ["Go", "Distributed Systems"],
+    description:
+      "Distributed MapReduce framework in Go with a long-lived coordinator, worker daemons, and standalone file server. Jobs are submitted as JSON via HTTP API/CLI; workers and coordinator run on different machines with no shared filesystem — all data moves through the file server.",
+    href: "https://github.com/nabinkhanal00/mapreduce",
+  },
+  {
+    title: "Aegis: Distributed KV Store with Raft",
+    stack: ["C", "Distributed Systems"],
+    description:
+      "Single-threaded distributed key-value store in C with Raft for consensus — focused on correctness, log replication, and fault tolerance.",
+    href: "https://github.com/nabinkhanal00/aegis",
+  },
+  {
     title: "Image Inpainting with Partial Convolution",
     stack: ["SvelteKit", "Azure", "FastAPI", "PyTorch"],
     description:
-      "Research-driven image restoration app that reconstructs missing regions with partial convolution and serves inference through a web interface.",
+      "Encoder-decoder network with partial convolution that automatically reconstructs missing/damaged image regions, preserving visual quality and integrity — served via FastAPI + SvelteKit on Azure.",
     href: "https://github.com/nabinkhanal00/image-inpainting-frontend",
   },
   {
-    title: "Jobs API",
-    stack: ["Node.js", "Express"],
+    title: "Pulchowk Campus Network Design",
+    stack: ["Cisco Packet Tracer"],
     description:
-      "REST API for managing clients, candidates, and job workflows with a predictable service-layer structure.",
-    href: "https://github.com/nabinkhanal00/jobs-api",
-  },
-  {
-    title: "Lekh",
-    stack: ["Go", "Fiber", "MongoDB"],
-    description:
-      "Literature-focused publishing platform with social posting flows and Mongo-backed APIs for writers and readers.",
-    href: "https://github.com/nabinkhanal00/lekh-backend",
+      "Designed and implemented network infrastructure for Pulchowk Campus in Cisco Packet Tracer — segmentation, routing, and service reliability across academic blocks.",
+    href: "https://github.com/nabinkhanal00/computer-network-lab-files",
   },
   {
     title: "BitTorrent Client",
     stack: ["Go"],
-    description: "Command-line BitTorrent client in Go that parses torrents, connects to peers, and downloads pieces over the protocol.",
+    description: "BitTorrent client in Go that parses torrents, connects to peers, and downloads pieces over the BitTorrent protocol.",
     href: "https://github.com/nabinkhanal00/gobittorrent",
   },
   {
     title: "Rubiks",
     stack: ["C++", "OpenGL"],
     description:
-      "Interactive OpenGL Rubik's Cube simulator with 3D transforms, animation, and algorithmic move sequences.",
+      "Graphical Rubik's Cube simulator with cube motion and solver for scrambled states — 3D transforms, animation, and algorithmic move sequences.",
     href: "https://github.com/nabinkhanal00/rubiks",
   },
   {
     title: "Breakout",
     stack: ["C++", "OpenGL"],
-    description: "Arcade-style Breakout clone built with C++ and OpenGL, including collision handling, rendering, and gameplay loops.",
+    description: "Classic Breakout brick game implemented in OpenGL with collision handling, rendering, and gameplay loops.",
     href: "https://github.com/nabinkhanal00/breakout",
   },
   {
-    title: "Pulchowk Campus Network Design",
-    stack: ["Cisco Packet Tracer"],
+    title: "Jobs API",
+    stack: ["Node.js", "Express"],
     description:
-      "Simulated campus network design covering segmentation, routing, and service reliability across academic blocks.",
-    href: "https://github.com/nabinkhanal00/computer-network-lab-files",
+      "Backend service for matching clients with jobs — REST API with service-layer structure for clients, candidates, and job workflows.",
+    href: "https://github.com/nabinkhanal00/jobs-api",
+  },
+  {
+    title: "Lekh",
+    stack: ["Go", "Fiber", "MongoDB"],
+    description:
+      "Social publishing platform where writers post literature — Go/Fiber + MongoDB APIs with social posting flows for writers and readers.",
+    href: "https://github.com/nabinkhanal00/lekh-backend",
   },
 ];
 
