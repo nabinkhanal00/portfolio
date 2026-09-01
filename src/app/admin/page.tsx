@@ -225,7 +225,7 @@ export default function AdminPage() {
             <MaterialIcon name="edit" className="text-3xl text-[var(--accent)]" />
             Blog admin
           </h1>
-          <p className="mt-2 text-sm text-[var(--muted)]">Create, edit, and publish posts. Images go to Hetzner <code className="rounded bg-[var(--accent-soft)] px-1">/uploads</code>.</p>
+          <p className="mt-2 text-sm text-[var(--muted)]">Create, edit, and publish posts.</p>
         </div>
         <div className="flex gap-2">
           <Link href="/blog" className="btn btn-secondary">
@@ -272,7 +272,7 @@ export default function AdminPage() {
                   <input type="file" accept="image/*" className="hidden" onChange={handleCoverUpload} disabled={uploadingCover} />
                 </label>
               </div>
-              <p className="mt-1 text-xs text-[var(--muted)]">Paste screenshot directly (Ctrl+V) or drag & drop — uploads to Hetzner</p>
+              <p className="mt-1 text-xs text-[var(--muted)]">Paste screenshot directly (Ctrl+V) or drag & drop</p>
               {form.cover_image && (
                 <div className="mt-2 overflow-hidden rounded-xl border border-[var(--line)]" onPaste={handleCoverPaste} onDrop={handleCoverDrop} onDragOver={(e) => e.preventDefault()}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}

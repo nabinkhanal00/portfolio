@@ -378,7 +378,7 @@ export const handleImageUpload = async (
   if (!file) throw new Error("No file provided")
   if (file.size > MAX_FILE_SIZE) throw new Error(`File size exceeds maximum allowed (${MAX_FILE_SIZE / (1024 * 1024)}MB)`)
 
-  // Try Hetzner upload if token available (for portfolio blog)
+  // Try server upload if token available (for portfolio blog)
   try {
     const token = typeof window !== "undefined" ? localStorage.getItem("portfolio_admin_token") : null
     const api = process.env.NEXT_PUBLIC_API_URL || "https://api.nabinkhanal00.com.np"

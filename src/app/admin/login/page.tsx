@@ -62,7 +62,7 @@ export default function AdminLoginPage() {
         </form>
 
         <p className="mt-6 text-xs text-[var(--muted)]">
-          Images are stored on Hetzner at <code className="rounded bg-[var(--accent-soft)] px-1">/uploads</code>. Drafts are hidden from public blog until published.
+          Drafts are hidden from public blog until published.
         </p>
       </div>
     </main>
