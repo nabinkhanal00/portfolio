@@ -80,7 +80,7 @@ function SimpleRichEditor({ value, onChange, token }: Props) {
   }, [value, editor]);
   if (!editor) return null;
   return (
-    <div className="simple-editor-wrapper rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)]">
+    <div className="simple-editor-wrapper rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)] !h-auto !w-full !overflow-hidden">
       <EditorContext.Provider value={{ editor }}>
         <Toolbar>
           <ToolbarGroup><UndoRedoButton action="undo" /><UndoRedoButton action="redo" /></ToolbarGroup>
@@ -93,8 +93,9 @@ function SimpleRichEditor({ value, onChange, token }: Props) {
           <ToolbarSeparator />
           <ToolbarGroup><ColorHighlightPopover /><LinkPopover /><ImageUploadButton text="Add" /></ToolbarGroup>
         </Toolbar>
-        <EditorContent editor={editor} role="presentation" className="simple-editor-content min-h-[380px] p-6" />
+        <EditorContent editor={editor} role="presentation" className="simple-editor-content !m-0 !h-auto !max-w-none !w-full !flex-none min-h-[380px] p-6" />
       </EditorContext.Provider>
+      <style>{`.simple-editor-wrapper{width:100%!important;height:auto!important;overflow:hidden!important;max-width:100%!important;}.simple-editor-content{max-width:none!important;width:100%!important;margin:0!important;height:auto!important;display:block!important;}.simple-editor-content .tiptap.ProseMirror.simple-editor{padding:1.5rem!important;min-height:340px;max-width:100%;word-break:break-word;overflow-wrap:anywhere;}`}</style>
     </div>
   );
 }
