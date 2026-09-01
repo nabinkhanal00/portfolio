@@ -30,6 +30,15 @@ import { MaterialIcon } from "@/components/material-icon";
 import { marked } from "marked";
 import TurndownService from "turndown";
 
+import "@/components/tiptap-templates/simple/simple-editor.scss";
+import "@/components/tiptap-node/blockquote-node/blockquote-node.scss";
+import "@/components/tiptap-node/code-block-node/code-block-node.scss";
+import "@/components/tiptap-node/heading-node/heading-node.scss";
+import "@/components/tiptap-node/list-node/list-node.scss";
+import "@/components/tiptap-node/image-node/image-node.scss";
+import "@/components/tiptap-node/paragraph-node/paragraph-node.scss";
+import "@/components/tiptap-node/horizontal-rule-node/horizontal-rule-node.scss";
+
 type Props = { value: string; onChange: (html: string) => void; token: string | null };
 type Variant = "simple" | "notion" | "markdown";
 const KEY = "portfolio_editor_variant";
@@ -62,7 +71,13 @@ function SimpleRichEditor({ value, onChange, token }: Props) {
     content: value || "<p></p>",
     onUpdate: ({ editor }) => onChange(editor.getHTML()),
   });
-  useEffect(() => { if (editor && value !== editor.getHTML()) editor.commands.setContent(value || "<p></p>"); }, [value, editor]);
+  // Only sync from props when not focused and content actually differs (prevents cursor jump / immediate revert)
+  useEffect(() => {
+    if (!editor) return;
+    if (editor.isFocused) return;
+    const cur = editor.getHTML();
+    if (value !== cur) editor.commands.setContent(value || "<p></p>", { emitUpdate: false } as any);
+  }, [value, editor]);
   if (!editor) return null;
   return (
     <div className="simple-editor-wrapper rounded-2xl border border-[var(--line)] bg-[var(--surface-strong)]">
@@ -80,7 +95,6 @@ function SimpleRichEditor({ value, onChange, token }: Props) {
         </Toolbar>
         <EditorContent editor={editor} role="presentation" className="simple-editor-content min-h-[380px] p-6" />
       </EditorContext.Provider>
-      <style>{`@import "@/components/tiptap-templates/simple/simple-editor.scss";`}</style>
     </div>
   );
 }
@@ -105,7 +119,11 @@ function NotionEditor({ value, onChange, token }: Props) {
     },
     editorProps: { attributes: { class: "prose max-w-none min-h-[420px] p-8 text-[15px] leading-relaxed outline-none prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-img:rounded-xl", placeholder: "Type '/' for commands…" } as any },
   });
-  useEffect(() => { if (editor && value !== editor.getHTML()) editor.commands.setContent(value || "<p></p>"); }, [value, editor]);
+  useEffect(() => {
+    if (!editor) return;
+    if (editor.isFocused) return;
+    if (value !== editor.getHTML()) editor.commands.setContent(value || "<p></p>", { emitUpdate: false } as any);
+  }, [value, editor]);
   if (!editor) return null;
   const insert = (fn: () => void) => { editor.chain().focus().deleteRange({ from: editor.state.selection.from - 1, to: editor.state.selection.from }).run(); fn(); setSlashOpen(false); };
   return (
