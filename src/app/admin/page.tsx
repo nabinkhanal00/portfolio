@@ -93,6 +93,59 @@ export default function AdminPage() {
     }
   };
 
+  const handleCoverPaste = async (e: React.ClipboardEvent) => {
+    const items = e.clipboardData.items;
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.type.startsWith("image/")) {
+        const file = item.getAsFile();
+        if (!file || !token) return;
+        e.preventDefault();
+        setUploadingCover(true);
+        try {
+          const fd = new FormData();
+          fd.append("image", file);
+          const res = await fetch(`${API_URL}/api/upload`, {
+            method: "POST",
+            headers: { Authorization: `Bearer ${token}` },
+            body: fd,
+          });
+          if (!res.ok) throw new Error("Upload failed");
+          const data = await res.json();
+          setForm((f) => ({ ...f, cover_image: data.url }));
+        } catch (err: unknown) {
+          alert(err instanceof Error ? err.message : "Upload failed");
+        } finally {
+          setUploadingCover(false);
+        }
+        return;
+      }
+    }
+  };
+
+  const handleCoverDrop = async (e: React.DragEvent) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files?.[0];
+    if (!file || !file.type.startsWith("image/") || !token) return;
+    setUploadingCover(true);
+    try {
+      const fd = new FormData();
+      fd.append("image", file);
+      const res = await fetch(`${API_URL}/api/upload`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+        body: fd,
+      });
+      if (!res.ok) throw new Error("Upload failed");
+      const data = await res.json();
+      setForm((f) => ({ ...f, cover_image: data.url }));
+    } catch (err: unknown) {
+      alert(err instanceof Error ? err.message : "Upload failed");
+    } finally {
+      setUploadingCover(false);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!token) return;
@@ -211,16 +264,17 @@ export default function AdminPage() {
           <div className="grid gap-4 md:grid-cols-2">
             <div>
               <label className="text-xs font-semibold tracking-widest text-[var(--muted)] uppercase">Cover image</label>
-              <div className="mt-1 flex gap-2">
-                <input value={form.cover_image} onChange={(e) => setForm({ ...form, cover_image: e.target.value })} className="flex-1 rounded-xl border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm outline-none focus:border-[var(--accent)]" placeholder="/uploads/... or https://" />
+              <div className="mt-1 flex gap-2" onPaste={handleCoverPaste} onDrop={handleCoverDrop} onDragOver={(e) => e.preventDefault()}>
+                <input value={form.cover_image} onChange={(e) => setForm({ ...form, cover_image: e.target.value })} onPaste={handleCoverPaste} className="flex-1 rounded-xl border border-[var(--line)] bg-[var(--surface)] px-3 py-2 text-sm outline-none focus:border-[var(--accent)]" placeholder="/uploads/... or https:// — paste image (Ctrl+V)" />
                 <label className="btn btn-secondary whitespace-nowrap">
                   <MaterialIcon name="upload" className="text-base" />
                   {uploadingCover ? "..." : "Upload"}
                   <input type="file" accept="image/*" className="hidden" onChange={handleCoverUpload} disabled={uploadingCover} />
                 </label>
               </div>
+              <p className="mt-1 text-xs text-[var(--muted)]">Paste screenshot directly (Ctrl+V) or drag & drop — uploads to Hetzner</p>
               {form.cover_image && (
-                <div className="mt-2 overflow-hidden rounded-xl border border-[var(--line)]">
+                <div className="mt-2 overflow-hidden rounded-xl border border-[var(--line)]" onPaste={handleCoverPaste} onDrop={handleCoverDrop} onDragOver={(e) => e.preventDefault()}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={form.cover_image.startsWith("http") ? form.cover_image : `${API_URL}${form.cover_image}`} alt="cover" className="h-32 w-full object-cover" />
                 </div>
