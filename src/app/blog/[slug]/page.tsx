@@ -68,7 +68,7 @@ export default async function BlogDetail({ params }: { params: Promise<{ slug: s
         )}
 
         <div
-          className="prose prose-neutral mt-8 max-w-none text-[15px] leading-relaxed text-[var(--muted)] prose-headings:text-[var(--text)] prose-a:text-[var(--accent)] prose-strong:text-[var(--text)] prose-img:rounded-2xl prose-img:border prose-img:border-[var(--line)]"
+          className="prose prose-neutral mt-8 max-w-none text-[15px] leading-relaxed text-[var(--muted)] prose-headings:font-display prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-[var(--text)] prose-h1:text-3xl prose-h1:leading-tight prose-h2:text-2xl prose-h2:leading-tight prose-h3:text-xl prose-h3:leading-snug prose-h4:text-base prose-h4:uppercase prose-h4:tracking-[0.08em] prose-p:my-3 prose-a:text-[var(--accent)] prose-a:underline prose-strong:text-[var(--text)] prose-blockquote:border-l-2 prose-blockquote:border-[var(--line)] prose-blockquote:pl-4 prose-blockquote:italic prose-code:before:content-none prose-code:after:content-none prose-pre:my-4 prose-pre:rounded-xl prose-pre:border prose-pre:border-[var(--line)] prose-pre:bg-[var(--surface)] prose-pre:p-4 prose-img:rounded-2xl prose-img:border prose-img:border-[var(--line)] prose-hr:my-6 prose-li:my-1 prose-ul:list-disc prose-ol:list-decimal"
           dangerouslySetInnerHTML={{ __html: blog.content }}
         />
 
