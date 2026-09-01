@@ -81,6 +81,12 @@ export const siteMetadata = {
       description:
         "Contact Nabin Khanal for systems engineering roles, distributed systems work, AI infrastructure, and collaboration.",
     },
+    blog: {
+      title: "Blog",
+      path: "/blog",
+      description:
+        "Technical writing on distributed systems, operating systems, networking, and AI for infrastructure — notes, deep dives, and build logs.",
+    },
   },
 } as const;
 
@@ -104,6 +110,7 @@ export const navigation = [
   { href: "/", label: "Home", icon: "home" },
   { href: "/about", label: "About", icon: "person" },
   { href: "/projects", label: "Projects", icon: "deployed_code" },
+  { href: "/blog", label: "Blog", icon: "article" },
   { href: "/skills", label: "Skills", icon: "terminal" },
   { href: "/work", label: "Work", icon: "work_history" },
   { href: "/resume", label: "Resume", icon: "description" },
