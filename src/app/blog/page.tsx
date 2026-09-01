@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MaterialIcon } from "@/components/material-icon";
+import { BlogEmptyState } from "@/components/blog-empty-state";
 import { buildMetadata } from "@/lib/metadata";
 import { API_URL, type Blog } from "@/lib/api";
 
@@ -49,48 +50,12 @@ export default async function BlogPage() {
           </div>
           <div className="flex items-center gap-2 font-mono text-[11px] tracking-wide text-[var(--muted)]">
             <span className="hidden sm:inline">Field notes — infra / systems / AI</span>
-            <Link href="/admin" className="icon-label rounded-full border border-[var(--line)] px-3 py-1 text-xs font-semibold text-[var(--muted)] hover:border-[var(--accent)] hover:text-[var(--text)]">
-              <MaterialIcon name="edit_note" className="text-sm" />
-              New entry
-            </Link>
           </div>
         </div>
       </div>
 
       {blogs.length === 0 ? (
-        <section className="py-16">
-          <div className="relative overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--surface-strong)]">
-            <div className="bg-dot-grid pointer-events-none absolute inset-0 opacity-[0.06]" />
-            <div className="relative grid gap-8 p-10 md:grid-cols-[1.1fr_0.9fr] md:p-12">
-              <div>
-                <p className="font-mono text-[11px] font-bold tracking-[0.2em] text-[var(--accent)] uppercase">Empty log</p>
-                <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-[var(--text)]">No published entries yet</h2>
-                <p className="mt-3 max-w-md text-sm leading-relaxed text-[var(--muted)]">
-                  This is where deep dives on Raft, MapReduce, eBPF, and AI for reliability will live. The index is ready — publish your first entry to populate it.
-                </p>
-                <div className="mt-6 flex gap-3">
-                  <Link href="/admin" className="btn btn-primary">
-                    <MaterialIcon name="edit" className="text-base" />
-                    Write first post
-                  </Link>
-                  <Link href="/projects" className="btn btn-secondary">
-                    <MaterialIcon name="deployed_code" className="text-base" />
-                    See projects
-                  </Link>
-                </div>
-              </div>
-              <div className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--surface)] p-6 font-mono text-xs leading-relaxed text-[var(--muted)]">
-                <p className="font-bold tracking-widest text-[var(--text)] uppercase">Log format</p>
-                <div className="mt-4 space-y-2">
-                  <p><span className="text-[var(--accent)]">—</span> title · excerpt · cover</p>
-                  <p><span className="text-[var(--accent)]">—</span> HTML body + inline images (<code className="rounded bg-[var(--accent-soft)] px-1">/uploads</code>)</p>
-                  <p><span className="text-[var(--accent)]">—</span> tags, publish toggle, reading time</p>
-                  <p className="pt-2 text-[11px] opacity-70">Drafts stay hidden from this index until published.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <BlogEmptyState />
       ) : (
         <section className="py-10">
           {/* Featured — first post gets editorial treatment, rest in dense grid */}
